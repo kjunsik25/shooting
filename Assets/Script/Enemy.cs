@@ -37,10 +37,10 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
         else if(collision.gameObject.tag == "PlayerBullet"){
-            Bullet Playerbullet = collision.gameObject.GetComponent<Bullet>();
-            OnHit(Playerbullet.damge);
+            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+            OnHit(bullet.damge);
 
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject); 
         }
         
     }
