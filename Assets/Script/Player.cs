@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public bool isTouchLeft;
     public GameObject bulletObjA;  
     public GameObject bulletObjB;
+    public GameManager manager;
 
     Animator anim;
 
@@ -117,6 +118,10 @@ public class Player : MonoBehaviour
                     isTouchLeft = true;
                     break;
             }
+        }
+        else if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet"){
+            manager.RespawnPlayer();
+            gameObject.SetActive(false);
         }
     }
     void OnTriggerExit2D(Collider2D collision)
