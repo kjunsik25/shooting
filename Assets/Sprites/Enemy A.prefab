@@ -167,10 +167,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyname: S
   Speed: 5
-  Health: 30
+  Health: 1
   sprites:
   - {fileID: 8414478535512612329, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   - {fileID: 4326287474489854147, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
+  enemyScore: 5
   bulletObjA: {fileID: 999411871539902581, guid: ea77a2252851bba4aab9e1f525ae6f7d, type: 3}
   bulletObjB: {fileID: 999411871539902581, guid: 979dd11baddfcb3489cf3f6cac2db291, type: 3}
   player: {fileID: 0}

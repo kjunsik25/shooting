@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -7,6 +8,7 @@ public class Enemy : MonoBehaviour
     public int Health;
     public Sprite[] sprites;
 
+    public int enemyScore;
     public GameObject bulletObjA;  
     public GameObject bulletObjB;
     public GameObject player;
@@ -69,6 +71,8 @@ public class Enemy : MonoBehaviour
         Invoke("ReturnSprite", 0.1f);
 
         if(Health <=0){
+            Player playerLogic = player.GetComponent<Player>();
+            playerLogic.score += enemyScore;
             Destroy(gameObject);
         }
     }
