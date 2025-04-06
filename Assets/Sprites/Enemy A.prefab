@@ -174,6 +174,9 @@ MonoBehaviour:
   enemyScore: 5
   bulletObjA: {fileID: 999411871539902581, guid: ea77a2252851bba4aab9e1f525ae6f7d, type: 3}
   bulletObjB: {fileID: 999411871539902581, guid: 979dd11baddfcb3489cf3f6cac2db291, type: 3}
+  itemCoin: {fileID: 405690145843856885, guid: bf5afd88858fb6b4f86f7cedd3f7ac44, type: 3}
+  itemPower: {fileID: 8655113467863745338, guid: f71ed0abc0831ac459da4f480e9beacb, type: 3}
+  itemBoom: {fileID: 5718755445188143048, guid: c0fed88db11ebf04ea977152f3910cab, type: 3}
   player: {fileID: 0}
-  maxShotDelay: 0.5
+  maxShotDelay: 1
   curShotDelay: 0

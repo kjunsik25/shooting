@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -11,6 +12,10 @@ public class Enemy : MonoBehaviour
     public int enemyScore;
     public GameObject bulletObjA;  
     public GameObject bulletObjB;
+    public GameObject itemCoin;
+    public GameObject itemPower;
+    public GameObject itemBoom;
+    
     public GameObject player;
 
     public float maxShotDelay;
@@ -64,7 +69,7 @@ public class Enemy : MonoBehaviour
         curShotDelay += Time.deltaTime;
     }
 
-    void OnHit(int damage) //데미지 입는 함수
+    public void OnHit(int damage) //데미지 입는 함수
     {
         Health -= damage;
         spriteRenderer.sprite = sprites[1]; 
@@ -73,6 +78,21 @@ public class Enemy : MonoBehaviour
         if(Health <=0){
             Player playerLogic = player.GetComponent<Player>();
             playerLogic.score += enemyScore;
+
+            //아이템 드랍율 설정
+            int ran = Random.Range(0, 10); // 0은 제외외
+            if(ran < 4){ //아이템 없음 40%
+                Debug.Log("Not Item");
+            }
+            else if (ran < 7){ //코인 30%
+                Instantiate(itemCoin, transform.position, itemCoin.transform.rotation);
+            }
+            else if (ran < 8){ //파워업 10%
+                Instantiate(itemPower, transform.position, itemPower.transform.rotation);
+            }
+            else if (ran < 10){ //폭탄 20%
+                Instantiate(itemBoom, transform.position, itemBoom.transform.rotation);
+            }
             Destroy(gameObject);
         }
     }
